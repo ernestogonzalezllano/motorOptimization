@@ -1,0 +1,103 @@
+.App {
+    display: grid;
+    height: 100%;
+    width: 100vw;
+    grid-template-rows: 80px auto;
+    background-color: #89c9ba;
+}
+.App-logo {
+  width: 80px;
+  min-width: 80px;
+}
+.App-header {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+.App-form__inputCamera{
+  display: none;
+}
+.App-containerForm{
+     margin: 1em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 5px;
+}
+.App-form__containersInput{
+  display: flex;
+  flex-direction: column;
+}
+.App-form__containersInput label{
+  display: block;  
+  margin: .5em .2em;
+}
+
+.App-form__containersInput input{
+  border-radius: 5px;
+  border: 1px solid darkgrey;
+  height: 2em;
+  outline: none;
+}
+.App-form__containersInput select{
+  border-radius: 5px;
+  border: 1px solid darkgrey;
+  height: 2rem;
+  outline: none;
+}
+.App-form__readButton{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #8cd2c1;
+      height: 3em;
+      box-shadow: 1px 1px 6px grey;
+      
+}
+
+.App-form__imgContainer{
+    display: flex;
+    justify-content: center;
+}
+.App-form__imgContainer img{
+  width: 200px;
+  height: 200px;
+}
+.App-form__buttonsContainer{
+      justify-content: center;
+      display: flex;
+}
+
+.App-form__buttonsContainer button{
+    appearance: none;
+    border: none;
+    background: lightcoral;
+    width: 100%;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+}
+.App-form__informationContainer__number{
+      display: block;
+      text-align: center;
+      font-size: 4em;
+}
+.App-form__informationContainer__text{
+  text-align: center;
+      display: block;
+      font-size: 1.5em;
+
+}
+
+.App-form__inputPic{
+  display: none;
+}
+
+.App-form__addPic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  height: 3em;
+  box-shadow: 1px 1px 6px grey;
+  margin: 1em 0;
+}
