@@ -1,8 +1,10 @@
 {
-  "name": "tesseract.js-react-app",
+  "name": "motor-optimization",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-image-file-resizer": "^0.3.10",

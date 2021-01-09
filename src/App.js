@@ -3,7 +3,7 @@ import logo from "./logo.svg"
 import { createWorker } from 'tesseract.js';
 import './App.css';
 import Resizer from 'react-image-file-resizer';
-import Modal from './Modal';
+import Modal from './Confirm';
 
 function App() {
   
@@ -107,6 +107,7 @@ function App() {
           <div className="App-form__imgContainer" >
             <img src={imagen} />
           </div>
+          
           <div className="App-form__containersInput">
             <label for="projectName">projectName</label>
             <input readOnly={read} type="text" id="projectName" name="projectName" onChange={handleChangeContact} />
