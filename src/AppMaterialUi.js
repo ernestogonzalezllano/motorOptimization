@@ -108,7 +108,13 @@ const useStyles = makeStyles((theme) => ({
       border: 'none',
       outline:"none",
       padding: theme.spacing(2, 4, 3)
-  }
+   },
+   loadContainer:{
+    flexDirection: "column",
+    alignItems: "center",
+    color: "grey",
+    textAlign:"center"
+   }
 
 }));
 
@@ -217,7 +223,9 @@ export default function AppMaterialUi() {
   }); */
 
   const worker = createWorker({
-    logger: m => setCarga(m.progress),
+    logger: m =>{
+      if(m.length!==0) setCarga({status:m.status,progress:m.progress===0?0.05:m.progress})
+    },
   });
   const doOCR = async (imagen) => {
     await worker.load();
@@ -319,7 +327,7 @@ export default function AppMaterialUi() {
   }
 
   useEffect(()=>{
-    console.log(motor);
+    console.log(carga);
   })
   
 
@@ -335,7 +343,7 @@ export default function AppMaterialUi() {
         src={logo}>
         </Avatar>
         <Typography component="h1" variant="h5">
-        Engine Optimization
+        Electric Motor Optimization
         </Typography>
 
         <form className={classes.form} noValidate>
@@ -425,13 +433,19 @@ export default function AppMaterialUi() {
             </Grid>
             <Grid item xs={12} className={classes.readedContainer} >
               {ocr?
-              <Typography>
+              <Typography style={{color:"grey"}} >
                 {ocr}
               </Typography>
               :
               ""
               }
-              {Math.round(carga*100)>1 && <CircularProgressWithLabel value={Math.round(carga*100)} />}
+              {Math.round(carga.progress*100)>1 && <Box flex className={classes.loadContainer} >
+                  <CircularProgressWithLabel value={Math.round(carga.progress*100)} />
+                  <Typography>
+                  {carga.status}
+                  </Typography>
+                </Box> 
+              }
             </Grid>
 
             <Grid item xs={12}>
@@ -613,7 +627,7 @@ export default function AppMaterialUi() {
                 component="h1" 
                 variant="h5"
               > 
-              Added Engines: {motor.length}
+              Added Motors: {motor.length}
               </label>
 
             </Grid>
