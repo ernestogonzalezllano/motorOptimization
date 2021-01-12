@@ -77,7 +77,7 @@ export default function Confirm({data,contact,reset}) {
             src={logo}>
             </Avatar>
             <Typography component="h1" variant="h5">
-            Engine Optimization
+            Ahorro Electrico Motores
             </Typography>
         <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -85,7 +85,7 @@ export default function Confirm({data,contact,reset}) {
             </Grid>
             <Grid item xs={12}>
                 <Typography component="h3" variant="subtitle1">
-                   Project name:  {contact.projectName}
+                   Nombre del Proyecto:  {contact.projectName}
                 </Typography>
             </Grid>
             {data.map((e)=>{
@@ -105,20 +105,20 @@ export default function Confirm({data,contact,reset}) {
                         <Grid item xs={3}>
                             <List component="nav" aria-label="main mailbox folders">
                                 <ListItem >
-                                <ListItemText primary="P.Factor" secondary={e.powerFactor} />
+                                <ListItemText primary="Factor" secondary={e.powerFactor} />
                                 </ListItem>
                                 <ListItem >
-                                <ListItemText primary="S.Mode" secondary={e.startMode} />
+                                <ListItemText primary="Partida" secondary={e.startMode} />
                                 </ListItem>
                             </List> 
                         </Grid>
                         <Grid item xs={3}>
                         <List component="nav" aria-label="main mailbox folders">
                             <ListItem >
-                            <ListItemText primary="Volts" secondary={e.volts} />
+                            <ListItemText primary="Voltaje" secondary={e.volts} />
                             </ListItem>
                             <ListItem >
-                            <ListItemText primary="Ampers" secondary={e.ampers} />
+                            <ListItemText primary="Amperes" secondary={e.ampers} />
                             </ListItem>
                         </List>   
                         </Grid>
@@ -135,10 +135,10 @@ export default function Confirm({data,contact,reset}) {
                         <Grid item xs={3}>
                             <List component="nav" aria-label="main mailbox folders">
                                 <ListItem >
-                                <ListItemText primary="Month" secondary={e.monthyUse} />
+                                <ListItemText primary="Uso Mensual" secondary={e.monthyUse} />
                                 </ListItem>
                                 <ListItem >
-                                <ListItemText primary="Day" secondary={e.dailyUse} />
+                                <ListItemText primary="Uso Diario" secondary={e.dailyUse} />
                                 </ListItem>
                             </List> 
                         </Grid>
@@ -158,7 +158,7 @@ export default function Confirm({data,contact,reset}) {
         endIcon={<SendIcon/>}
         onClick={handleOpen}
       >
-        Send
+        Enviar
       </Button>
       <Modal
         open={open}

@@ -1,10 +1,8 @@
 import React , { useEffect, useState }from 'react';
 import logo from "./logo.svg"
 import { createWorker } from 'tesseract.js';
-//import Resizer from 'react-image-file-resizer';
 import Confirm from './Confirm';
 import imageC from "./imageC.png"
-import logoOCR from "./ocr.png"
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -115,10 +113,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "grey",
     textAlign:"center"
-   },
-   containerImageOcr:{
-     display: "flex",
-     alignItems: "center"
    }
 
 }));
@@ -348,7 +342,7 @@ export default function AppMaterialUi() {
         src={logo}>
         </Avatar>
         <Typography component="h1" variant="h5">
-        Ahorro Electrico Motores
+        Electric Motor Optimization
         </Typography>
 
         <form className={classes.form} noValidate>
@@ -362,7 +356,7 @@ export default function AppMaterialUi() {
                 disabled={read}
                 fullWidth
                 id="projectMame"
-                label="Nombre del Proyecto"
+                label="Project Name"
                 autoFocus
                 onChange={handleChangeContact}
               />
@@ -375,9 +369,9 @@ export default function AppMaterialUi() {
                 disabled={read}
                 fullWidth
                 id="email"
-                label="Email"
+                label="Email Address"
                 name="email"
-                autoComplete="Email"
+                autoComplete="email"
                 onChange={handleChangeContact}
               />
             </Grid>
@@ -389,7 +383,7 @@ export default function AppMaterialUi() {
                 disabled={read}
                 fullWidth
                 id="country"
-                label="Pais"
+                label="Country"
                 name="country"
                 autoComplete="country"
                 onChange={handleChangeContact}
@@ -403,7 +397,7 @@ export default function AppMaterialUi() {
                 disabled={read}
                 fullWidth
                 id="kwh"
-                label="Kwh $"
+                label="KWh"
                 name="kwh"
                 autoComplete="kwh"
                 type="number"
@@ -414,14 +408,14 @@ export default function AppMaterialUi() {
             <Grid item xs={12}>
               <Divider />
             </Grid>
-
-            <Grid item xs={6} sm={6} className={classes.containerImageOcr}>
-              <label className={classes.labelInput} 
+           
+            <Grid item xs={12} sm={12}>
+              <label className={classes.labelInput}
               for="placa" 
               component="h1" 
               variant="h5"
               >
-              OCR Placa Motor
+              Read Motor
               </label>
               <Input className={classes.inputFile}
               id="placa"
@@ -429,16 +423,14 @@ export default function AppMaterialUi() {
               onChangeCapture={handleRead}
                 ></Input>
             </Grid>
-
-            <Grid className={classes.imageReadContainer} justify="center" justifyContent="center" item xs={6} sm={6}>
+            <Grid className={classes.imageReadContainer} justify="center" justifyContent="center" item xs={12}>
               {imagen?
               <img width="100px" height="100px" alt="imagen" src={imagen}/>
               :
-              <img width="100px" height="100px" alt="imagen" src={logoOCR} />
+              <img width="100px" height="100px" alt="imagen" src={imageC} />
               }
-            </Grid> 
-
-            <Grid item xs={12} sm={12} className={classes.readedContainer} >
+            </Grid>
+            <Grid item xs={12} className={classes.readedContainer} >
               {ocr?
               <Typography style={{color:"grey"}} >
                 {ocr}
@@ -466,7 +458,7 @@ export default function AppMaterialUi() {
                 required
                 fullWidth
                 id="motorName"
-                label="Nombre del Motor"
+                label="Motor Name"
                 name="motorName"
                 autoComplete="mname"
                 value={dataMotor.motorName}
@@ -476,12 +468,12 @@ export default function AppMaterialUi() {
 
             <Grid item xs={12}>
               <FormControl error={errorMotor.startMode} item xs={12} variant="outlined" className={classes.formControl} >
-              <InputLabel error={errorMotor.startMode} id="demo-simple-select-outlined-label">Tipo de Partida</InputLabel>
+              <InputLabel error={errorMotor.startMode} id="demo-simple-select-outlined-label">Start Mode</InputLabel>
                 <Select
                   labelId="demo-simple-select-outlined-label"
                   id="demo-simple-select-outlined"
                   name="startMode"
-                  label="Tipo de Partida"
+                  label="Start Mode"
                   value= {dataMotor.startMode}
                   onChange={handleChangeMotor}
                 >
@@ -499,7 +491,7 @@ export default function AppMaterialUi() {
                 required
                 fullWidth
                 id="volts"
-                label="Voltaje"
+                label="Volts"
                 name="volts"
                 autoComplete="volts"
                 type="number"
@@ -515,7 +507,7 @@ export default function AppMaterialUi() {
                 required
                 fullWidth
                 id="ampers"
-                label="Amperes"
+                label="Ampers"
                 name="ampers"
                 autoComplete="ampers"
                 type="number"
@@ -531,7 +523,7 @@ export default function AppMaterialUi() {
                 required
                 fullWidth
                 id="powerFactor"
-                label="Factor de Potencia"
+                label="PowerFactor"
                 name="powerFactor"
                 autoComplete="pfactor"
                 type="number"
@@ -579,7 +571,7 @@ export default function AppMaterialUi() {
                 required
                 fullWidth
                 id="dailyUse"
-                label="Uso Diario"
+                label="Daily Use"
                 name="dailyUse"
                 autoComplete="dailyUse"
                 type="number"
@@ -595,13 +587,21 @@ export default function AppMaterialUi() {
                 required
                 fullWidth
                 id="monthyUse"
-                label="Uso Mensual"
+                label="Monthy Use"
                 name="monthyUse"
                 autoComplete="monthyUse"
                 type="number"
                 value={dataMotor.monthyUse}
                 onChange= {handleChangeMotor}
               />
+            </Grid>
+         
+            <Grid className={classes.imageReadContainer} justify="center" justifyContent="center" item xs={12}>
+              {dataMotor.img?
+              <img width="100px" height="100px" alt="imagen" src={URL.createObjectURL(dataMotor.img)}/>
+              :
+              <img width="100px" height="100px" alt="imagen" src={imageC} />
+              }
             </Grid>
 
             <Grid item xs={12} sm={12}>
@@ -610,7 +610,7 @@ export default function AppMaterialUi() {
                 component="h1" 
                 variant="h5"
               >
-            Foto del Motor
+                <AddAPhotoIcon/>
               </label>
               <Input className={classes.inputFile}
                 id="archivo"
@@ -621,20 +621,12 @@ export default function AppMaterialUi() {
               </Input>
             </Grid>
 
-            <Grid className={classes.imageReadContainer} justify="center" justifyContent="center" item xs={12}>
-              {dataMotor.img?
-              <img width="100px" height="100px" alt="imagen" src={URL.createObjectURL(dataMotor.img)}/>
-              :
-              <img width="100px" height="100px" alt="imagen" src={imageC} />
-              }
-            </Grid>
-
             <Grid item xs={12} sm={12}>
               <label className={classes.contador}
                 component="h1" 
                 variant="h5"
               > 
-              Proyecto con {motor.length} Motores
+              Added Motors: {motor.length}
               </label>
 
             </Grid>
@@ -653,7 +645,7 @@ export default function AppMaterialUi() {
                   handleAdd(e)
                 }}
               > 
-              Agregar
+              Add Motor
               </Button>
             </Grid>
 
@@ -665,7 +657,7 @@ export default function AppMaterialUi() {
                 className={classes.submit}
                 display="flex"
                 onClick={handleQuote}
-              > Cotizar
+              > Quote
               </Button>
             </Grid>
         </Grid>
