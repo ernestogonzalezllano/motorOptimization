@@ -101,3 +101,9 @@
   box-shadow: 1px 1px 6px grey;
   margin: 1em 0;
 }
+.makeStyles-paper-1 {
+    display: flex;
+    margin-top: 5px;
+    align-items: center;
+    flex-direction: column;
+}
