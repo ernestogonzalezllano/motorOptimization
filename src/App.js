@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from "./logo.svg"
+import logo from "./logo.png"
 import { createWorker } from 'tesseract.js';
 import './App.css';
 import Resizer from 'react-image-file-resizer';

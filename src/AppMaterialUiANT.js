@@ -1,5 +1,5 @@
 import React , { useEffect, useState }from 'react';
-import logo from "./logo.svg"
+import logo from "./logo.png"
 import { createWorker } from 'tesseract.js';
 import Confirm from './Confirm';
 import imageC from "./imageC.png"

@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Avatar, Grid, Modal } from '@material-ui/core';
-import logo from "./logo.svg"
+import logo from "./logo.png"
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
